@@ -1,0 +1,44 @@
+stanja avtomata:
+- notArmed()
+- armed()
+- triggered()
+
+inicializacija(vklop):
+- notArmed
+
+funkcije za branje SMS:
+- arm()		//arms alarm
+- dissarm()	//dissarms alarm
+- read()	//reads sensor
+- delete()	//delets all messages
+
+funkcija za pošiljanje SMS:
+- armed()
+- notArmed()
+- triggered()
+- sensor status()
+- messages_delete()
+
+===
+
+String result;
+
+if(SIM900.available() >0){ //preveri če je prislo sporocilo
+  result = readMessage(); //sporocilo shrani v result
+}
+
+switch(result){ //switch za sporocilo
+  case "ARM":
+    break;
+  case "DISSARM":
+    break;
+  case "STATUS":
+    break;
+  default:
+    break;
+}
+
+string readMessage(){
+  message = SIM900.readString();
+  return message;
+}

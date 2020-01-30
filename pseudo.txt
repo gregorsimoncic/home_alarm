@@ -1,0 +1,65 @@
+check_sensors()
+check_sms()
+
+case
+
+  armed
+    check_sensors()
+    check_sms()
+    if (sensor==open)
+      state=triggered
+      send_sms(triggered)
+    if (sms==disarm)
+      state=not_armed
+      send_sms(unarming)
+      if (state==not_armed)
+        send_sms(not_armed)
+    if (sms==status)
+      check_sensors()
+      send_sms(armed + sensors)
+    if (sms==arm)
+      status==armed
+      send_sms(arming)
+      if (status==armed)
+        send_sms(armed)
+    else
+      state=armed
+
+  triggered
+    check_sensor_door()
+    check_sms()
+    if (sms==disarm)
+      state=not_armed
+      send_sms(unarming)
+      if (state==not_armed)
+        send_sms(not_armed)
+    if (sms==arm)
+      state=armed
+      send_sms(arming)
+      if (state==armed)
+        send_sms(armed)
+    if (sms==status)
+      state=triggered
+      check_sensors()
+      send_sms(triggered + sensors)
+    else
+      state=triggered
+
+  not_armed
+    check_sensors()
+    check_sms()
+    if (sms==arm)
+      state=armed
+      send_sms(arming)
+      if (state==armed)
+        send_sms(armed)
+    if (sms==disarm)
+      state=not_armed
+      send_sms(unarming)
+      if (state==not_armed)
+        send_sms(not_armed)
+    if (sms==status)
+      state=not_armed
+      send_sms(not_armed + sensors)
+    else
+      state=not_armed
