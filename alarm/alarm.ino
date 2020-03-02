@@ -15,7 +15,7 @@ void setup() {
   delay(20000);   
   
   // Send the SMS
-  sendSMS();
+  sendSMS_test();
 
   pinMode(LED_BUILTIN, OUTPUT);
 }
@@ -39,7 +39,7 @@ delay(1000);
 
 }
 
-void sendSMS() {
+void sendSMS_test() {
   // AT command to set SIM900 to SMS mode
   SIM900.print("AT+CMGF=1\r"); 
   delay(100);
