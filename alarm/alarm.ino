@@ -39,6 +39,9 @@ delay(1000);
 
 }
 
+// ========================
+//   SEND SMS TEST
+// ========================
 void sendSMS_test() {
   // AT command to set SIM900 to SMS mode
   SIM900.print("AT+CMGF=1\r"); 
@@ -60,3 +63,29 @@ void sendSMS_test() {
   // Give module time to send SMS
   delay(5000); 
 }
+
+// ========================
+//   SEND SMS STATUS
+// ========================
+void sendSMS_status() {
+  SIM900.print("AT+CMGF=1\r");
+  delay(100);
+  SIM900.println("AT + CMGS = \"+38640311222\"");
+  delay(100);
+  SIM900.println("Status.");
+  delay(100);
+  SIM900.println((char)26);
+  delay(100);
+  SIM900.println();
+  delay(5000);
+}
+
+// ========================
+//   SEND SMS STOPED
+// ========================
+// ========================
+//   SEND SMS ARMED
+// ========================
+// ========================
+//   SEND SMS TRIGERED
+// ========================
