@@ -18,7 +18,7 @@ void loop() {
 
 void callSomeone()
 {
-  SIM900.println("ATD + +38640311222;");
+  SIM900.println("ATD + +38641000111;");
   delay(100);
   SIM900.println();
   delay(30000);
