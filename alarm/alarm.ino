@@ -49,7 +49,7 @@ void sendSMS_test() {
 
   // REPLACE THE X's WITH THE RECIPIENT'S MOBILE NUMBER
   // USE INTERNATIONAL FORMAT CODE FOR MOBILE NUMBERS
-  SIM900.println("AT + CMGS = \"+38640311222\""); 
+  SIM900.println("AT + CMGS = \"+38641000111\""); 
   delay(100);
   
   // REPLACE WITH YOUR OWN SMS MESSAGE CONTENT
@@ -70,7 +70,7 @@ void sendSMS_test() {
 void sendSMS_status() {
   SIM900.print("AT+CMGF=1\r");
   delay(100);
-  SIM900.println("AT + CMGS = \"+38640311222\"");
+  SIM900.println("AT + CMGS = \"+38641000111\"");
   delay(100);
   SIM900.println("Status.");
   delay(100);
