@@ -81,7 +81,7 @@ void change_alarm_state() {
         Serial.println("Alarm is ARMED\r\n");
         delay(10);
         alarm_state_change = true;
-        GPRS.println("AT+CMGS=\"+38640311222\"");
+        GPRS.println("AT+CMGS=\"+38641000111\"");
         delay(500);
         GPRS.print("Alarm is ARMED\r");
         GPRS.write( 0x1a );
@@ -97,7 +97,7 @@ void change_alarm_state() {
         Serial.println("Alarm is DISABLED\r\n");
         delay(10);
         alarm_state_change = true;
-        GPRS.println("AT+CMGS=\"+38640311222\"");
+        GPRS.println("AT+CMGS=\"+38641000111\"");
         delay(500);
         GPRS.print("Alarm is DISABLED\r");
         GPRS.write( 0x1a );
@@ -110,13 +110,13 @@ void change_alarm_state() {
         Serial.println("Alarm is TRIGGERED\r\n");
         delay(10);
         alarm_state_change = true;
-        GPRS.println("ATD + +38640311222;");
+        GPRS.println("ATD + +38641000111;");
         delay(100);
         GPRS.println();
         delay(30000);
         GPRS.println("ATH");
         delay(500);
-        GPRS.println("AT+CMGS=\"+38640311222\"");
+        GPRS.println("AT+CMGS=\"+38641000111\"");
         delay(500);
         GPRS.print("Alarm is TRIGGERED\r");
         GPRS.write( 0x1a );
@@ -132,7 +132,7 @@ void change_alarm_state() {
         Serial.println("Alarm is DISABLED\r\n");
         delay(10);
         alarm_state_change = true;
-        GPRS.println("AT+CMGS=\"+38640311222\"");
+        GPRS.println("AT+CMGS=\"+38641000111\"");
         delay(500);
         GPRS.print("Alarm is DISABLED\r");
         GPRS.write( 0x1a );
@@ -191,7 +191,7 @@ void send_status() {
       Serial.println("STATUS is: DISABLED");
       delay(10);
       textMessage = "";
-      GPRS.println("AT+CMGS=\"+38640311222\"");
+      GPRS.println("AT+CMGS=\"+38641000111\"");
       delay(500);
       GPRS.print("STATUS is: DISABLED\r");
       GPRS.write( 0x1a );
@@ -201,7 +201,7 @@ void send_status() {
       Serial.println("STATUS is: ARMED");
       delay(10);
       textMessage = "";
-      GPRS.println("AT+CMGS=\"+38640311222\"");
+      GPRS.println("AT+CMGS=\"+38641000111\"");
       delay(500);
       GPRS.print("STATUS is: ARMED\r");
       GPRS.write( 0x1a );
@@ -211,7 +211,7 @@ void send_status() {
       Serial.println("STATUS is: TRIGGERED");
       delay(10);
       textMessage = "";
-      GPRS.println("AT+CMGS=\"+38640311222\"");
+      GPRS.println("AT+CMGS=\"+38641000111\"");
       delay(500);
       GPRS.print("STATUS is: TRIGGERED\r");
       GPRS.write( 0x1a );
